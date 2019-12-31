@@ -1,0 +1,144 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/style.default.css">
+
+
+<body class="signin">
+    <div class="signinpanel">
+
+        <div class="row">
+
+            <div class="col-md-7">
+
+                <div class="signin-info">
+                    <div class="logopanel">
+                        <h1><span>MRF</span></h1>
+                    </div><!-- logopanel -->
+
+                    <div class="mb20"></div>
+
+                    <h5><strong>Welcome to Myanmar Rice Federation Asset Management Portal</strong></h5>
+                    <ul>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Level 9, 29 UMFCCI Tower</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> MinYeKyawSwar Road</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Lan Ma Daw Township</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Yangon</li>
+                        <li><i class="fa fa-arrow-circle-o-right mr5"></i> Myanmar</li>
+                    </ul>
+                    <div class="mb20"></div>
+                    <strong>Not a member? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Sign Up</a></strong>
+                </div><!-- signin0-info -->
+
+            </div><!-- col-sm-7 -->
+
+            <div class="col-md-5">
+
+                <form method="post">
+                    <h4 class="nomargin">Sign In</h4>
+                    <p class="mt5 mb20">Login to access the Portal.</p>
+                    <input asp-for="Input.Email" type="text" class="form-control uname" placeholder="Email" />
+                    <input asp-for="Input.Password" type="password" class="form-control pword" placeholder="Password" />
+                    <a asp-page="./ForgotPassword"><small>Forgot your password?</small></a>
+                    <button type="submit" class="btn btn-success btn-block">Sign In</button>
+
+                </form>
+            </div><!-- col-sm-5 -->
+
+        </div><!-- row -->
+
+        <div class="signup-footer">
+            <div class="pull-left">
+                &copy; 2020. All Rights Reserved. Project-X AMP
+            </div>
+            <div class="pull-right">
+                Created By: <a href="http://themepixels.com/" target="_blank">Project-X</a>
+            </div>
+        </div>
+
+    </div><!-- signin -->
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+@*<h2>@ViewData["Title"]</h2>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            <section>
+                <form method="post">
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Input.RememberMe">
+                                <input asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">Log in</button>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <a asp-page="./ForgotPassword">Forgot your password?</a>
+                        </p>
+                        <p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        </p>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h4>Use another service to log in.</h4>
+                <hr />
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        <div>
+                            <p>
+                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                for details on setting up this ASP.NET application to support logging in via external services.
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </section>
+        </div>
+    </div>*@

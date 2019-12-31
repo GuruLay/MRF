@@ -1,0 +1,224 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MRF.Models
+@inject UserManager<User> UserManager
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MRF.Web</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        @*<link rel="stylesheet" href="~/css/site.css" />*@
+        <link rel="stylesheet" href="css/style.default.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+
+    <section>
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span> MRF </span></h1>
+            </div><!-- logopanel -->
+
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <img alt="" src="images/photos/loggeduser.png" class="media-object">
+                        <div class="media-body">
+                            <h4>John Doe</h4>
+                            <span>"Life is so..."</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">Account</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <li><a href="profile.html"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+                        <li><a href=""><i class="fa fa-cog"></i> <span>Account Settings</span></a></li>
+                        <li><a href=""><i class="fa fa-question-circle"></i> <span>Help</span></a></li>
+                        <li><a href="signout.html"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+                    </ul>
+                </div>
+
+                <h5 class="sidebartitle">Navigation</h5>
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                    <li><a asp-area="" asp-controller="Inventory" asp-action="Index"><i class="fa fa-th-list"></i> <span>Inventory</span></a></li>
+                    <li><a asp-area="" asp-controller="Production" asp-action="Index"><i class="fa fa-cogs"></i> <span>Production</span></a></li>
+                    <li><a asp-area="" asp-controller="Expense" asp-action="Index"><i class="fa  fa-ticket"></i> <span>Expense</span></a></li>
+                    <li><a asp-area="" asp-controller="Sale" asp-action="Index"><i class="fa  fa-bar-chart-o"></i> <span>Sale</span></a></li>
+                    <li><a asp-area="" asp-controller="Account" asp-action="Index"><i class="fa fa-tasks"></i> <span>Account</span></a></li>
+                    
+                    <li class="nav-parent">
+                        <a asp-area="" asp-controller="Home" asp-action="About"><i class="fa fa-file-text"></i> <span>Reports</span></a>
+                        <ul class="children">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-caret-right"></i> Sale Reports</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-caret-right"></i> Cash Flow</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-caret-right"></i> Production Reort</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-caret-right"></i> Inventory Report</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-caret-right"></i> Profit and Loss</a></li>
+                        </ul>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About"><i class="fa fa-archive"></i> <span>Documentations</span></a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About"><i class="fa fa-asterisk"></i> <span>About</span></a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact"><i class="fa fa-phone"></i> <span>Contact</span></a></li>
+                </ul>
+
+            </div><!-- leftpanelinner -->
+        </div><!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+                <form class="searchform" action="index.html" method="post">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+                </form>
+
+
+                <div class="header-right" style="padding-right: 10px;">
+                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/Identity/Account/Login" method="post" id="logoutForm" class="navbar-right">
+                        <ul class="headermenu">
+                            <li>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        @UserManager.GetUserName(User)
+                                        <span class="caret"></span>
+                                    </button>
+
+                                    <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                        <li><a href="profile.html"><i class="glyphicon glyphicon-user"></i> My Profile</a></li>
+                                        <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
+                                        <li><a href="#"><i class="glyphicon glyphicon-record"></i> Administration</a></li>
+                                        <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Help</a></li>
+                                        @*<li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                                        <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>*@
+                                        <li><button type="submit"><i class="glyphicon glyphicon-log-out"></i> Log Out</button></li>
+                                    </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div><!-- header-right -->
+
+
+
+            </div><!-- headerbar -->
+
+            <div class="pageheader">
+                <h2><i class="fa fa-home"></i> Dashboard <span>Subtitle goes here...</span></h2>
+                <div class="breadcrumb-wrapper">
+                    <span class="label">You are here:</span>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Bracket</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="contentpanel">
+
+                <div class="row">
+                    @*<partial name="_CookieConsentPartial" />*@
+
+                    <div class="container body-content">
+                        @RenderBody()
+                        <hr />
+                        <footer>
+                            <p>&copy; 2019 - MRF.Web</p>
+                        </footer>
+                    </div>
+                </div><!-- row -->
+            </div><!-- contentpanel -->
+
+        </div><!-- mainpanel -->
+
+    </section>
+
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">MRF.Web</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Inventory" asp-action="Index">Inventory</a></li>
+                        <li><a asp-area="" asp-controller="Sale" asp-action="Index">Sale</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Index">Account</a></li>
+                        <li><a asp-area="" asp-controller="Production" asp-action="Index">Production</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>*@
+
+    <environment include="Development">
+        @*<script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="~/js/jquery-ui-1.10.3.min.js"></script>
+        <script src="~/js/modernizr.min.js"></script>
+        <script src="~/js/jquery.sparkline.min.js"></script>
+        <script src="~/js/toggles.min.js"></script>
+        <script src="~/js/retina.min.js"></script>
+        <script src="~/js/jquery.cookies.js"></script>
+
+        <script src="~/js/flot/jquery.flot.min.js"></script>
+        <script src="~/js/flot/jquery.flot.resize.min.js"></script>
+        <script src="~/js/flot/jquery.flot.spline.min.js"></script>
+        <script src="~/js/morris.min.js"></script>
+        <script src="~/js/raphael-2.1.0.min.js"></script>
+
+        <script src="js/custom.js"></script>
+        <script src="js/dashboard.js"></script>
+    </environment>
+    <environment exclude="Development">
+        @*<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+            </script>*@
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

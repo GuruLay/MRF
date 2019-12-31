@@ -1,0 +1,39 @@
+﻿@model MRF.Web.ViewModels.ExpenseViewModels.ExpenseIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="contentpanel">
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <a class="btn btn-primary">Add</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="subtitle mb5">Expenses</h5>
+            <p class="mb20">Show a Summary List of Expenses</p>
+            <div class="table-responsive">
+                <table class="table table-striped mb30">
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>DateTime</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var expense in Model.Expenses)
+                    {
+                        <tr>
+                            <td>@expense.ExpendType</td>
+                            <td>@expense.Amount</td>
+                            <td>@expense.DateTime.ToString("d")</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div><!-- table-responsive -->
+        </div>
+    </div>
+</div>

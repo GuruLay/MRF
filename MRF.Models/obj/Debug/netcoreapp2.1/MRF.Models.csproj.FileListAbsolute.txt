@@ -1,0 +1,12 @@
+C:\WorkingFolder\GitHub\MRF\MRF.Models\bin\Debug\netcoreapp2.1\MRF.Models.deps.json
+C:\WorkingFolder\GitHub\MRF\MRF.Models\bin\Debug\netcoreapp2.1\MRF.Models.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Models\bin\Debug\netcoreapp2.1\MRF.Models.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Models\bin\Debug\netcoreapp2.1\MRF.Infrastructure.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Models\bin\Debug\netcoreapp2.1\MRF.Infrastructure.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.csprojAssemblyReference.cache
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.csproj.CoreCompileInputs.cache
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.AssemblyInfoInputs.cache
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.AssemblyInfo.cs
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.csproj.CopyComplete
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Models\obj\Debug\netcoreapp2.1\MRF.Models.pdb

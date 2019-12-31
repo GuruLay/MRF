@@ -1,0 +1,42 @@
+﻿@model MRF.Web.ViewModels.InventoryIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="contentpanel">
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <a class="btn btn-primary">Add</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="subtitle mb5">Inventory List</h5>
+            <p class="mb20">Show a Summary List of In and Out Products from All Warehouses</p>
+            <div class="table-responsive">
+                <table class="table table-striped mb30">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>DateTime</th>
+                            <th>Warehouse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var inventory in Model.Inventories)
+                        {
+                            <tr>
+                                <td>@inventory.ProductName</td>
+                                <td>@inventory.Quantity</td>
+                                <td>@inventory.DateTime.ToString("d")</td>
+                                <td>@inventory.Warehouse</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div><!-- table-responsive -->
+        </div>
+    </div>
+</div>
+

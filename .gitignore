@@ -3,3 +3,6 @@
 ################################################################################
 
 /MRF.WebSkin
+/.vs/MRF/v15/Server/sqlite3
+/.vs/config/applicationhost.config
+/.vs/MRF/DesignTimeBuild/.dtbcache

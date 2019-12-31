@@ -1,0 +1,224 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<link href="~/css/style.default.css" rel="stylesheet">
+
+<body class="signin">
+
+    <section>
+
+        <div class="signuppanel">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="signup-info">
+                        <div class="logopanel">
+                            <h1><span>MRF</span></h1>
+                        </div><!-- logopanel -->
+
+                        <div class="mb20"></div>
+
+                        <h5><strong>Myanmar Rice Federation</strong></h5>
+
+                        <p>Vivamus et nunc tristique, faucibus lacus quis, vestibulum ex. Aliquam accumsan posuere euismod. Maecenas ut neque eu nisi varius efficitur.</p>
+                        <p>Vivamus ac sem eget ante rutrum lacinia eget non tortor.</p>
+                        <div class="mb20"></div>
+
+                        <div class="feat-list">
+                            <i class="fa fa-wrench"></i>
+                            <h4 class="text-success">Inventory Control</h4>
+                            <p>Pellentesque posuere urna at euismod gravida. Nam eleifend lectus in turpis molestie semper. Maecenas ipsum purus, commodo quis interdum et, venenatis a magna.</p>
+                        </div>
+
+                        <div class="feat-list">
+                            <i class="fa fa-compress"></i>
+                            <h4 class="text-success">Manage Cash Flow</h4>
+                            <p>Phasellus a risus sit amet metus elementum viverra eget nec tortor. Nulla justo ex, posuere ac sem eget, molestie elementum urna.</p>
+                        </div>
+
+                        <div class="feat-list mb20">
+                            <i class="fa fa-search-plus"></i>
+                            <h4 class="text-success">Reports</h4>
+                            <p>Vestibulum bibendum nunc mauris, et porttitor ipsum suscipit eget. In erat nisi, accumsan in magna at, mattis porta dui.</p>
+                        </div>
+
+                        <h4 class="mb20">and much more...</h4>
+
+                    </div><!-- signup-info -->
+
+                </div><!-- col-sm-6 -->
+
+                <div class="col-md-6">
+
+                    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                        <h3 class="nomargin">Sign Up</h3>
+                        <p class="mt5 mb20">Already a member? <a asp-page="./Login"><strong>Sign In</strong></a></p>
+
+                        <label class="control-label">Name</label>
+                        <div class="row mb10">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="Firstname" />
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="Lastname" />
+                            </div>
+                        </div>
+
+                        <div class="mb10">
+                            <label class="control-label">Email</label>
+                            <input asp-for="Input.Email" type="text" class="form-control" />
+                        </div>
+
+                        <div class="mb10">
+                            <label class="control-label">Password</label>
+                            <input asp-for="Input.Password" type="password" class="form-control" />
+                        </div>
+
+                        <div class="mb10">
+                            <label class="control-label">Retype Password</label>
+                            <input asp-for="Input.ConfirmPassword" type="password" class="form-control" />
+                        </div>
+
+                        <label class="control-label">Birthday</label>
+                        <div class="row mb10">
+                            <div class="col-sm-5">
+                                <select class="select2" data-placeholder="Month">
+                                    <option value=""></option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" placeholder="Day" />
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" placeholder="Year" />
+                            </div>
+                        </div>
+
+                        <div class="mb10">
+                            <label class="control-label">Email Address</label>
+                            <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="mb10">
+                            <label class="control-label">Client</label>
+                            <select class="select2-2" data-placeholder="Choose a Client...">
+                                <option value=""></option>
+                                <option value="ClientOne">Client One</option>
+                                <option value="ClientTwo">Client Two</option>
+                                <option value="ClientThree">Client Three</option>
+                                <option value="ClientFour">Client Four</option>
+                                <option value="ClientFive">Client Five</option>
+                            </select>
+                        </div>
+                        <br />
+
+                        <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                    </form>
+                </div><!-- col-sm-6 -->
+
+            </div><!-- row -->
+
+            <div class="signup-footer">
+                <div class="pull-left">
+                    &copy; 2020. All Rights Reserved. Project-X, AMP
+                </div>
+                <div class="pull-right">
+                    Created By: <a href="http://themepixels.com/" target="_blank">Project-X</a>
+                </div>
+            </div>
+
+        </div><!-- signuppanel -->
+    
+    </section>
+    
+
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/modernizr.min.js"></script>
+<script src="~/js/jquery.sparkline.min.js"></script>
+<script src="~/js/jquery.cookies.js"></script>
+
+<script src="~/js/toggles.min.js"></script>
+<script src="~/js/retina.min.js"></script>
+
+<script src="~/js/select2.min.js"></script>
+
+<script src="~/js/custom.js"></script>
+<script>
+    jQuery(document).ready(function(){
+        
+        jQuery(".select2").select2({
+            width: '100%',
+            minimumResultsForSearch: -1
+        });
+        
+        jQuery(".select2-2").select2({
+            width: '100%'
+        });
+        
+        
+        // Please do not use the code below
+        // This is for demo purposes only
+        var c = jQuery.cookie('change-skin');
+        if (c && c == 'greyjoy') {
+            jQuery('.btn-success').addClass('btn-orange').removeClass('btn-success');
+        } else if(c && c == 'dodgerblue') {
+            jQuery('.btn-success').addClass('btn-primary').removeClass('btn-success');
+        } else if (c && c == 'katniss') {
+            jQuery('.btn-success').addClass('btn-primary').removeClass('btn-success');
+        }
+        
+    });
+</script>
+</body>
+
+
+
+
+@*
+    <h2>@ViewData["Title"]</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h4>Create a new account.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-default">Register</button>
+            </form>
+        </div>
+    </div>*@
