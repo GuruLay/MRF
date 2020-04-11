@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using MRF.Models.Base;
 
 namespace MRF.Services.Domain.Base
@@ -17,6 +18,8 @@ namespace MRF.Services.Domain.Base
         bool Update(IEnumerable<TEntity> entities);
 
         bool Delete(TEntity entity);
+
+        Task<List<TEntity>> GetAllAsync(bool includeDeleted = false);
 
         IQueryable<TEntity> GetAll(bool includeDeleted = false);
 

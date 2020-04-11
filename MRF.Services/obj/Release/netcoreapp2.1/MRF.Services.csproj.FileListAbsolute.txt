@@ -1,0 +1,16 @@
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Services.deps.json
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Services.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Services.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Data.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Infrastructure.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Models.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Data.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Models.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Services\bin\Release\netcoreapp2.1\MRF.Infrastructure.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.csprojAssemblyReference.cache
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.csproj.CoreCompileInputs.cache
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.AssemblyInfoInputs.cache
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.AssemblyInfo.cs
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.csproj.CopyComplete
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.dll
+C:\WorkingFolder\GitHub\MRF\MRF.Services\obj\Release\netcoreapp2.1\MRF.Services.pdb

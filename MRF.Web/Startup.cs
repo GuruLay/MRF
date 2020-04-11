@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -23,6 +25,7 @@ using MRF.Services.Domain;
 using MRF.Services.Domain.Interfaces;
 using MRF.Web.ViewModelBinder;
 using MRF.Web.ViewModelBinder.Interfaces;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MRF.Web
 {
@@ -83,6 +86,20 @@ namespace MRF.Web
             //        .Build();
             //});
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSwaggerGen(setupAction =>
+            {
+                setupAction.SwaggerDoc(
+                    "lib", 
+                    new Info()
+                    {
+                        Title = "API Library",
+                        Version = "2031.1"
+                    });
+                var commentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var commentsFilePath = Path.Combine(AppContext.BaseDirectory, commentsFile);
+                setupAction.IncludeXmlComments(commentsFilePath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -100,6 +117,13 @@ namespace MRF.Web
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(setupAction =>
+            {
+                setupAction.SwaggerEndpoint("/swagger/lib/swagger.json", "MRF");
+                setupAction.RoutePrefix = "";
+            });
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();

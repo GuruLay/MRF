@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MRF.Data.Repository.Interfaces;
 using MRF.Models.Base;
@@ -177,6 +178,9 @@ namespace MRF.Services.Domain.Base
             }
         }
 
+        public virtual async Task<List<TEntity>> GetAllAsync(bool includeDeleted = false) 
+            => await GetAll(includeDeleted).ToListAsync();
+        
         public virtual IQueryable<TEntity> GetAll(bool includeDeleted = false)
         {
             return includeDeleted

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MRF.Web</name>
+    </assembly>
+    <members>
+        <member name="T:MRF.Web.Controllers.InventoryController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MRF.Web.Controllers.InventoryController.GetAll">
+            <summary>
+            Get All Available Inventory List
+            </summary>
+            <returns>All Available Inventories list</returns>
+        </member>
+        <member name="T:MRF.Web.ViewModels.InventoryViewModels.InventoryViewModel">
+            <summary>
+            Inventory View Model
+            </summary>
+        </member>
+        <member name="P:MRF.Web.ViewModels.InventoryViewModels.InventoryViewModel.ProductName">
+            <summary>
+            Inventory Product Name
+            </summary>
+        </member>
+        <member name="P:MRF.Web.ViewModels.InventoryViewModels.InventoryViewModel.Quantity">
+            <summary>
+            Quantity of Inventory Product
+            </summary>
+        </member>
+        <member name="P:MRF.Web.ViewModels.InventoryViewModels.InventoryViewModel.DateTime">
+            <summary>
+            Inventory recording Date and Time
+            </summary>
+        </member>
+        <member name="P:MRF.Web.ViewModels.InventoryViewModels.InventoryViewModel.Warehouse">
+            <summary>
+            Inventory warehouse name
+            </summary>
+        </member>
+    </members>
+</doc>
