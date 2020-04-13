@@ -1,6 +1,7 @@
 C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\bin\Debug\netcoreapp2.1\MRF.Infrastructure.deps.json
 C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\bin\Debug\netcoreapp2.1\MRF.Infrastructure.dll
 C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\bin\Debug\netcoreapp2.1\MRF.Infrastructure.pdb
+C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\obj\Debug\netcoreapp2.1\MRF.Infrastructure.csprojAssemblyReference.cache
 C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\obj\Debug\netcoreapp2.1\MRF.Infrastructure.csproj.CoreCompileInputs.cache
 C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\obj\Debug\netcoreapp2.1\MRF.Infrastructure.AssemblyInfoInputs.cache
 C:\WorkingFolder\GitHub\MRF\MRF.Infrastructure\obj\Debug\netcoreapp2.1\MRF.Infrastructure.AssemblyInfo.cs
